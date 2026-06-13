@@ -3,50 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Student & Web Developer</title>
+    <title>Portfolio | Rais - Student & Web Developer</title>
     <style>
-        /* Notebook / School Theme Styling */
+        /* Modern Professional Bright Tech Styling */
         :root {
-            --paper-bg: #fdfbf7;
-            --line-color: #e2e8f0;
-            --margin-line: #f87171;
-            --text-color: #334155;
-            --ink-blue: #2563eb;
-            --pencil-gray: #64748b;
+            --bg-canvas: #f8fafc;
+            --bg-container: #ffffff;
+            --bg-card: #ffffff;
+            --line-color: rgba(59, 130, 246, 0.04);
+            --border-color: #e2e8f0;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --accent-blue: #2563eb;
+            --accent-cyan: #0891b2;
+            --tag-red: #ef4444;
         }
 
         body {
             font-family: 'Courier New', Courier, monospace;
-            background-color: #cbd5e1;
-            color: var(--text-color);
             margin: 0;
             padding: 0;
             line-height: 1.6;
+            min-height: 100vh;
+            background-color: var(--bg-canvas);
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            /* Professional Bright Digital Grid Layout */
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(37, 99, 235, 0.04) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(8, 145, 178, 0.03) 0%, transparent 40%),
+                linear-gradient(var(--line-color) 1px, transparent 1px),
+                linear-gradient(90deg, var(--line-color) 1px, transparent 1px);
+            background-size: 100%, 100%, 25px 25px, 25px 25px;
+            background-attachment: fixed;
         }
 
-        /* Lined Paper effect for the notebook */
-        .notebook {
-            background-color: var(--paper-bg);
-            background-image: linear-gradient(var(--line-color) 1px, transparent 1px);
-            background-size: 100% 2rem;
-            max-width: 900px;
-            margin: 2rem auto;
-            padding: 3rem 3rem 3rem 5rem;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-            border-radius: 4px;
-            position: relative;
-            border-left: 40px solid #e2e8f0;
-        }
-
-        /* Red margin line */
-        .notebook::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 20px;
-            width: 2px;
-            background-color: var(--margin-line);
+        /* Centralized Professional Container */
+        .portfolio-container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 4rem auto;
+            padding: 4rem;
+            background-color: var(--bg-container);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            box-shadow: 0 10px 25px -5px rgba(148, 163, 184, 0.15), 0 8px 10px -6px rgba(148, 163, 184, 0.1);
+            box-sizing: border-box;
         }
 
         header {
@@ -54,96 +59,131 @@
             justify-content: space-between;
             align-items: center;
             padding-bottom: 2rem;
-            border-bottom: 2px dashed var(--pencil-gray);
-            margin-bottom: 2rem;
+            border-bottom: 1px dashed var(--border-color);
+            margin-bottom: 3rem;
         }
 
         .logo {
             font-weight: bold;
             font-size: 1.4rem;
-            color: var(--ink-blue);
+            color: var(--accent-blue);
+            letter-spacing: -0.5px;
         }
 
         nav a {
-            color: var(--text-color);
+            color: var(--text-main);
             text-decoration: none;
             margin-left: 1.5rem;
             font-weight: bold;
+            transition: color 0.2s;
         }
 
         nav a:hover {
+            color: var(--accent-cyan);
             text-decoration: underline;
         }
 
         section {
-            margin-bottom: 4rem;
+            margin-bottom: 5rem;
         }
 
         .hero h1 {
             font-size: 2.5rem;
-            color: var(--ink-blue);
+            color: var(--text-main);
             margin-bottom: 1rem;
+            font-weight: 700;
         }
 
         .hero p {
             font-size: 1.1rem;
-            color: var(--pencil-gray);
-            max-width: 600px;
+            color: var(--text-muted);
+            max-width: 650px;
         }
 
         h2 {
-            font-size: 1.8rem;
-            color: var(--ink-blue);
-            text-decoration: underline;
-            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            color: var(--accent-blue);
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        h2::after {
+            content: '';
+            flex-grow: 1;
+            height: 1px;
+            background: linear-gradient(90deg, var(--border-color), transparent);
+            margin-left: 0.5rem;
         }
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
         }
 
         .card {
-            background: transparent;
-            padding: 1rem;
-            border: 2px dashed var(--pencil-gray);
-            border-radius: 4px;
-            position: relative;
+            background: var(--bg-card);
+            padding: 1.75rem;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            border-color: var(--accent-blue);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(148, 163, 184, 0.08);
         }
 
         .card h3 {
-            margin-top: 0;
-            color: var(--text-color);
+            margin: 0 0 0.5rem 0;
+            color: var(--text-main);
+            font-size: 1.25rem;
+        }
+
+        .card p {
+            margin: 0;
+            color: var(--text-muted);
+            font-size: 0.95rem;
         }
 
         .tag {
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             text-transform: uppercase;
             font-weight: bold;
-            color: var(--margin-line);
+            color: var(--tag-red);
+            display: block;
+            margin-bottom: 0.75rem;
+            letter-spacing: 0.5px;
         }
 
         /* Document Action Buttons */
         .doc-actions {
-            margin-top: 1rem;
+            margin-top: 1.75rem;
             display: flex;
             gap: 1rem;
         }
 
         .doc-btn {
-            font-size: 0.9rem;
-            color: var(--ink-blue);
+            font-size: 0.85rem;
+            color: var(--accent-blue);
             text-decoration: none;
             font-weight: bold;
-            border: 1px solid var(--ink-blue);
-            padding: 0.2rem 0.5rem;
+            border: 1px solid var(--accent-blue);
+            padding: 0.4rem 0.8rem;
             border-radius: 4px;
+            background: transparent;
+            transition: all 0.2s;
         }
 
         .doc-btn:hover {
-            background-color: var(--ink-blue);
+            background-color: var(--accent-blue);
             color: white;
+            box-shadow: 0 4px 10px rgba(37, 99, 235, 0.2);
         }
 
         /* Social and Contact Buttons */
@@ -157,46 +197,67 @@
 
         .social-btn {
             display: inline-block;
-            padding: 0.5rem 1rem;
-            border: 2px solid var(--text-color);
-            background-color: white;
-            color: var(--text-color);
+            padding: 0.75rem 1.5rem;
+            border: 1px solid var(--border-color);
+            background-color: var(--bg-canvas);
+            color: var(--text-main);
             text-decoration: none;
             font-weight: bold;
-            border-radius: 4px;
-            box-shadow: 3px 3px 0px var(--text-color);
+            border-radius: 6px;
             transition: all 0.2s;
+            width: 100%;
+            max-width: 450px;
+            box-sizing: border-box;
         }
 
         .social-btn:hover {
-            transform: translate(-2px, -2px);
-            box-shadow: 5px 5px 0px var(--text-color);
+            border-color: var(--accent-blue);
+            background-color: rgba(37, 99, 235, 0.02);
+            transform: translateX(4px);
         }
 
         .insta-btn {
-            border-color: #e1306c;
-            color: #e1306c;
-            box-shadow: 3px 3px 0px #e1306c;
+            border-color: rgba(225, 48, 108, 0.2);
         }
 
         .insta-btn:hover {
-            box-shadow: 5px 5px 0px #e1306c;
+            border-color: #e1306c;
+            background-color: rgba(225, 48, 108, 0.02);
+            color: #e1306c;
         }
 
         footer {
             text-align: center;
-            margin-top: 5rem;
+            margin-top: 6rem;
             padding-top: 2rem;
-            color: var(--pencil-gray);
-            border-top: 2px dashed var(--line-color);
+            color: var(--text-muted);
+            border-top: 1px dashed var(--border-color);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .portfolio-container {
+                padding: 2rem;
+                margin: 1.5rem auto;
+            }
+            header {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: flex-start;
+            }
+            nav a {
+                margin-left: 0;
+                margin-right: 1.5rem;
+            }
         }
     </style>
 </head>
 <body>
 
-    <div class="notebook">
+    <div class="portfolio-container">
+
         <header>
-            <div class="logo">Rais.Notes //</div>
+            <div class="logo">About Me_</div>
             <nav>
                 <a href="#about">About</a>
                 <a href="#education">Certificates</a>
@@ -207,76 +268,97 @@
 
         <main>
             <section class="hero">
-                <h1>Student & Web Developer_</h1>
-                <p>I build custom, responsive websites for people while navigating my studies. Actively setting up my freelance web agency.</p>
+                <h1>Student & Web Developer</h1>
+                <p>Applying structured engineering, clean logic, and modern design principles to build responsive custom websites while completing my degrees.</p>
             </section>
 
             <section id="about">
-                <h2>[01] About Me</h2>
-                <p>Currently studying and balancing schoolwork with digital creation. I turn concept ideas into clean code, maintaining an organized, structured approach to web business ventures.</p>
+                <h2>[01] Research & Profile</h2>
+                <p>Currently balancing academic studies and tech development. I connect technical logic with design, establishing a system-oriented workflow for client business websites.</p>
             </section>
 
             <section id="education">
-                <h2>[02] Study Certificates</h2>
+                <h2>[02] Academic & Study Certificates</h2>
                 <div class="grid">
                     <div class="card">
-                        <span class="tag">Certification</span>
-                        <h3>Web Development Basics</h3>
-                        <p>Issued by [Provider Name]</p>
+                        <span class="tag">// ID: 2025/09/4658</span>
+                        <h3>Basic Front-End</h3>
+                        <p>Web Development | edduby</p>
                         <div class="doc-actions">
-                            <a href="assets/cert1.pdf" target="_blank" class="doc-btn">View</a>
-                            <a href="assets/cert1.pdf" download="Web-Development-Certificate" class="doc-btn">Download</a>
+                            <a href="assets/Sertifikat (Basic Front-End) – Rais.pdf" target="_blank" class="doc-btn">View Document</a>
+                            <a href="assets/Sertifikat (Basic Front-End) – Rais.pdf" download="Sertifikat_Basic_Front-End_Rais" class="doc-btn">Download PDF</a>
                         </div>
                     </div>
+                    
                     <div class="card">
-                        <span class="tag">Certification</span>
-                        <h3>UI/UX Responsive Design</h3>
-                        <p>Issued by [Provider Name]</p>
+                        <span class="tag">// ID: 2025/09/5989</span>
+                        <h3>Basic Back-End</h3>
+                        <p>Web Development | edduby</p>
                         <div class="doc-actions">
-                            <a href="assets/cert2.pdf" target="_blank" class="doc-btn">View</a>
-                            <a href="assets/cert2.pdf" download="UIUX-Design-Certificate" class="doc-btn">Download</a>
+                            <a href="assets/Sertifikat (Basic Back-End) – Rais.pdf" target="_blank" class="doc-btn">View Document</a>
+                            <a href="assets/Sertifikat (Basic Back-End) – Rais.pdf" download="Sertifikat_Basic_Back-End_Rais" class="doc-btn">Download PDF</a>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <span class="tag">// ID: 2025/09/9996</span>
+                        <h3>Basic Machine Learning</h3>
+                        <p>Machine Learning | edduby</p>
+                        <div class="doc-actions">
+                            <a href="assets/Sertifikat (Basic Machine Learning) – Rais.pdf" target="_blank" class="doc-btn">View Document</a>
+                            <a href="assets/Sertifikat (Basic Machine Learning) – Rais.pdf" download="Sertifikat_Basic_Machine_Learning_Rais" class="doc-btn">Download PDF</a>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <span class="tag">// ID: 2025/09/8610</span>
+                        <h3>Basic Robotic</h3>
+                        <p>Robotic | edduby</p>
+                        <div class="doc-actions">
+                            <a href="assets/Sertifikat (Basic Robotic) – Rais.pdf" target="_blank" class="doc-btn">View Document</a>
+                            <a href="assets/Sertifikat (Basic Robotic) – Rais.pdf" download="Sertifikat_Basic_Robotic_Rais" class="doc-btn">Download PDF</a>
                         </div>
                     </div>
                 </div>
             </section>
 
             <section id="services">
-                <h2>[03] Web Business Venture</h2>
-                <p>Building high-performance client sites from scratch. Here is my current focus:</p>
+                <h2>[03] Web Ventures & Operations</h2>
+                <p>Creating and running live websites. Current projects include:</p>
                 <div class="grid">
                     <div class="card">
-                        <h3>01 / Web Design</h3>
-                        <p>Creating functional layout sketches and full responsive web architectures.</p>
+                        <h3>UI Design</h3>
+                        <p>Constructing wireframes, responsive grids, user flows, and aesthetic interface prototypes.</p>
                     </div>
                     <div class="card">
-                        <h3>02 / Frontend Code</h3>
-                        <p>Converting design drafts into standard compliance HTML, CSS, and interactive platforms.</p>
+                        <h3>Web Development</h3>
+                        <p>Compiling front-end structure into optimized, high-speed, standard compliant source code.</p>
                     </div>
                 </div>
             </section>
 
             <section id="contact">
-                <h2>[04] Connect</h2>
-                <p>Reach out to discuss website design options or project consultations.</p>
+                <h2>[04] Interface / Input</h2>
+                <p>Initialize communication channels for project planning or consultation modules:</p>
                 
                 <div class="btn-container">
                     <a href="https://www.instagram.com/rais.aq24/?utm_source=ig_web_button_share_sheet" target="_blank" class="social-btn insta-btn">
-                        📸 Instagram: @rais.aq24
+                        📸 Connect on Instagram: @rais.aq24
                     </a>
                     
                     <a href="mailto:raisaqeel90@gmail.com" class="social-btn">
-                        ✉️ Primary Email: raisaqeel90@gmail.com
+                        ✉️ Gmail (Main): raisaqeel90@gmail.com
                     </a>
 
                     <a href="mailto:raisaqeel9017@gmail.com" class="social-btn">
-                        ✉️ Alternate Email: raisaqeel9017@gmail.com
+                        ✉️ Gmail (Alternative): raisaqeel9017@gmail.com
                     </a>
                 </div>
             </section>
         </main>
 
         <footer>
-            <p>End of File // &copy; 2026 Rais Aqeel.</p>
+            <p>System Online // &copy; 2026 Rais. All rights reserved.</p>
         </footer>
     </div>
 
